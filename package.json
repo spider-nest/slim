@@ -1,0 +1,32 @@
+{
+  "name": "activity-page",
+  "version": "0.0.1",
+  "description": "Activity page template for svelte",
+  "keywords": [
+    "svelte",
+    "template",
+    "svelte-template",
+    "activity-page"
+  ],
+  "author": {
+    "name": "cnguu",
+    "email": "www@cnguu.cn",
+    "url": "https://github.com/cnguu"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "repository": "https://github.com/spider-nest/activity-page.git",
+  "homepage": "https://github.com/spider-nest/activity-page",
+  "bugs": {
+    "url": "https://github.com/spider-nest/activity-page/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.22",
+    "svelte": "^3.42.4",
+    "vite": "^2.5.3"
+  }
+}
