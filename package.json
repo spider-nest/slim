@@ -13,11 +13,20 @@
     "email": "www@cnguu.cn",
     "url": "https://github.com/cnguu"
   },
-  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "build": "cross-env NODE_ENV=production vite build",
+    "build:no-cache": "yarn clean:cache && yarn build",
+    "report": "cross-env REPORT=true yarn build",
+    "serve": "vite preview",
+    "lint:eslint": "eslint --cache --max-warnings 0  \"src/**/*.{svelte,js}\" --fix",
+    "lint:prettier": "prettier --write  \"src/**/*.{js,json,css,less,svelte,html,md}\"",
+    "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
+    "lint:pretty": "pretty-quick --staged",
+    "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
+    "clean:lib": "rimraf node_modules",
+    "reload": "rimraf yarn.lock && rimraf package.lock.json && yarn clean:lib && yarn",
+    "prepare": "husky install"
   },
   "repository": "https://github.com/spider-nest/activity-page.git",
   "homepage": "https://github.com/spider-nest/activity-page",
@@ -25,13 +34,28 @@
     "url": "https://github.com/spider-nest/activity-page/issues"
   },
   "license": "MIT",
-  "main": "./src/main.js",
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.0.0-next.22",
+    "autoprefixer": "^10.3.4",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-svelte3": "^3.2.0",
+    "husky": "^7.0.2",
+    "less": "^4.1.1",
+    "lint-staged": "^11.1.2",
+    "lodash-es": "^4.17.21",
+    "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
+    "prettier-plugin-svelte": "^2.4.0",
+    "pretty-quick": "^3.1.1",
+    "rimraf": "^3.0.2",
     "svelte": "^3.42.4",
+    "svelte-preprocess": "^4.9.2",
     "vite": "^2.5.3"
   },
   "engines": {
-    "node": "^12 || >=14"
+    "node": "^12.20 || ^14.13.1 || >=16"
   }
 }
