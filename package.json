@@ -15,6 +15,7 @@
   },
   "scripts": {
     "create:page": "node scripts/createPage.js",
+    "delete:page": "node scripts/deletePage.js",
     "dev": "vite",
     "build": "cross-env NODE_ENV=production vite build",
     "build:no-cache": "yarn clean:cache && yarn build",
