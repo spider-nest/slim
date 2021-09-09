@@ -8,6 +8,7 @@ export default defineConfig({
   server: {
     host: true,
     port: 9527,
+    strictPort: true,
     proxy: {
       "/api": {
         target: "http://localhost:8000",
@@ -20,6 +21,11 @@ export default defineConfig({
   build: {
     target: "es2015",
     outDir: "dist",
+    assetsDir: "assets",
+    assetsInlineLimit: 4096,
+    cssCodeSplit: true,
+    sourcemap: false,
+    minify: "terser",
     terserOptions: {
       compress: {
         keep_infinity: true,
@@ -27,7 +33,7 @@ export default defineConfig({
       },
     },
     brotliSize: true,
-    chunkSizeWarningLimit: 1024,
+    chunkSizeWarningLimit: 512,
   },
   plugins: [
     svelte(),
@@ -38,7 +44,7 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: /^@\//,
+        find: /^@/,
         replacement: path.resolve(__dirname, "./src"),
       },
     ],
