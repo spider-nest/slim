@@ -3,11 +3,12 @@
   const increment = () => {
     count += 1;
   };
+  console.log(increment);
 </script>
 
-<button class="hello-world" on:click="{increment}">
-  Clicks: {count}
-</button>
+<main id="main">
+  <div>1</div>
+</main>
 
 <style lang="less">
   @import "./index.less";

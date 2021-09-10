@@ -9,6 +9,4 @@
   <title>蚁族崛起公测预抽卡活动</title>
 </svelte:head>
 
-<main>
-  <Main />
-</main>
+<Main />
