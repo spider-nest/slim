@@ -29,7 +29,19 @@ $ yarn create:page pageA
 
 ## Structure
 
-- todo
+```
+|-- public         # Static resources that do not need to be compiled
+|-- scripts        # NodeJS script
+|-- src                # Code files that need to be compiled
+    |-- pages          # Multi-page
+        |-- home           # Home page: /home/index.html
+        |-- pageA          # Page A：/pageA/index.html
+        |-- pageB          # Page B：/pageB/index.html
+    |-- styles         # Global Style
+    |-- ...
+|-- template       # Page Template
+|-- ...
+```
 
 ## Other scripts
 
