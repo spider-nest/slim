@@ -3,13 +3,10 @@
 </script>
 
 <svelte:head>
-  <meta name="description" content="Activity page template for svelte" />
-  <meta
-    name="keywords"
-    content="svelte,template,svelte-template,activity-page"
-  />
+  <meta name="description" content="蚁族崛起公测预抽卡活动" />
+  <meta name="keywords" content="蚁族,崛起,公测,预,抽卡,活动" />
   <meta name="author" content="cnguu" />
-  <title>Activity Page</title>
+  <title>蚁族崛起公测预抽卡活动</title>
 </svelte:head>
 
 <main>
