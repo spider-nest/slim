@@ -7,9 +7,21 @@ module.exports = {
       plugins: [
         require("autoprefixer")(),
         require("postcss-pxtorem")({
-          rootValue: 37.5, // 设计稿 750/20
+          rootValue: 16, // 设计稿 320/20
           unitPrecision: 5,
-          propList: ["font", "font-size", "line-height", "letter-spacing"],
+          propList: [
+            "font",
+            "font-size",
+            "letter-spacing",
+            "top",
+            "right",
+            "bottom",
+            "left",
+            "width",
+            "height",
+            "line-height",
+            "background-size",
+          ],
           selectorBlackList: [],
           replace: true,
           mediaQuery: false,
