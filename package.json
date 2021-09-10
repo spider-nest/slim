@@ -18,7 +18,7 @@
     "delete:page": "node scripts/deletePage.js",
     "dev": "vite",
     "build": "cross-env NODE_ENV=production vite build",
-    "build:no-cache": "yarn clean:cache && yarn build",
+    "build:noCache": "yarn clean:cache && yarn build",
     "report": "cross-env REPORT=true yarn build",
     "serve": "vite preview",
     "lint:eslint": "eslint --cache --max-warnings 0  \"src/**/*.{svelte,js}\" --fix",

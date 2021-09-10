@@ -46,6 +46,8 @@ $ yarn create:page pageA
 ## Other scripts
 
 - Delete page: `yarn delete:page pageA`
+- Normal compilation: `yarn build`
+- Normal no cache compilation: `yarn build:noCache`
 - ...
 
 ## Tips
