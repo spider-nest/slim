@@ -15,7 +15,10 @@
       <div class="remain">联系客服</div>
     </header>
     <main class="main">main</main>
-    <footer class="footer">footer</footer>
+    <footer class="footer">
+      <a class="rule" href="javascript:;">活动规则</a>
+      <p class="other">本活动最终解释权归蚁族崛起所有</p>
+    </footer>
   </div>
 </div>
 
