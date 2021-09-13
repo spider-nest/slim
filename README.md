@@ -6,9 +6,3 @@
 [![Release](https://img.shields.io/github/v/release/spider-nest/activity-page)](https://github.com/spider-nest/activity-page/releases/latest)
 
 </div>
-
-## Usage
-
-```bash
-$ yarn
-```

@@ -1,5 +1,4 @@
 /node_modules/
-/src/node_modules/@sapper/
 /dist/
 /.vscode/
 .DS_Store
@@ -10,4 +9,6 @@ yarn-error.log*
 *.lock
 package-lock.json
 .eslintcache
-/__sapper__/
+/build
+/.svelte-kit
+/package

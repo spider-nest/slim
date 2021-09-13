@@ -1,62 +1,65 @@
+<script context="module">
+  export const prerender = true;
+</script>
+
 <script>
-  import Logo from "images/logo.png";
+  import Logo from "$assets/logo.png";
+  import Counter from "$components/counter/Counter.svelte";
 </script>
 
 <svelte:head>
   <meta name="description" content="Activity page template for svelte" />
   <meta
     name="keywords"
-    content="svelte,sapper,template,svelte-template,sapper-template,activity-page"
+    content="svelte,template,kit,svelte-template,svelte-kit,activity-page"
   />
   <meta name="author" content="cnguu" />
   <title>Activity Page</title>
 </svelte:head>
 
-<h1>Great success!</h1>
+<section>
+  <h1>
+    <div class="welcome">
+      <picture>
+        <img src="{Logo}" alt="Welcome" />
+      </picture>
+    </div>
 
-<figure>
-  <img alt="logo" src="{Logo}" />
-  <figcaption>Have fun!</figcaption>
-</figure>
+    to your new<br />SvelteKit app
+  </h1>
 
-<p>
-  <strong>
-    Try editing this file (src/routes/index.svelte) to test live reloading.
-  </strong>
-</p>
+  <h2>
+    try editing <strong>src/routes/index.svelte</strong>
+  </h2>
+
+  <Counter />
+</section>
 
 <style>
-  h1,
-  figure,
-  p {
-    text-align: center;
-    margin: 0 auto;
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
   }
 
   h1 {
-    font-size: 28px;
-    text-transform: uppercase;
-    font-weight: 700;
-    margin: 0 0 5px 0;
-  }
-
-  figure {
-    margin: 0 0 10px 0;
-  }
-
-  img {
     width: 100%;
-    max-width: 400px;
-    margin: 0 0 10px 0;
   }
 
-  p {
-    margin: 10px auto;
+  .welcome {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding: 0 0 calc(100% * 495 / 2048) 0;
   }
 
-  @media (min-width: 480px) {
-    h1 {
-      font-size: 40px;
-    }
+  .welcome img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: block;
   }
 </style>

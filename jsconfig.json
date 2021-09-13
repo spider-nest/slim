@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "$assets/*": [
+        "src/assets/*"
+      ],
+      "$components/*": [
+        "src/components/*"
+      ],
+      "$directives/*": [
+        "src/directives/*"
+      ],
+      "$styles/*": [
+        "src/styles/*"
+      ],
+      "$utils/*": [
+        "src/utils/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.js",
+    "src/**/*.svelte"
+  ]
+}
