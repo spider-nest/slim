@@ -34,7 +34,6 @@
     "url": "https://github.com/spider-nest/activity-page/issues"
   },
   "license": "MIT",
-  "type": "module",
   "dependencies": {
     "cookie": "^0.4.1",
     "lodash-es": "^4.17.21"
