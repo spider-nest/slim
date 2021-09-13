@@ -1,11 +1,13 @@
 {
   "name": "activity-page",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Activity page template for svelte",
   "keywords": [
     "svelte",
+    "sapper",
     "template",
     "svelte-template",
+    "sapper-template",
     "activity-page"
   ],
   "author": {
@@ -14,18 +16,16 @@
     "url": "https://github.com/cnguu"
   },
   "scripts": {
-    "create:page": "node scripts/createPage.js",
-    "delete:page": "node scripts/deletePage.js",
-    "dev": "vite",
-    "build": "cross-env NODE_ENV=production vite build",
-    "build:noCache": "yarn clean:cache && yarn build",
-    "report": "cross-env REPORT=true yarn build",
-    "serve": "vite preview",
+    "dev": "sapper dev -p 9527",
+    "build": "sapper build --legacy",
+    "export": "sapper export --legacy",
+    "start": "node __sapper__/build -p 9528",
+    "server": "serve -l 9529 __sapper__/export",
     "lint:eslint": "eslint --cache --max-warnings 0  \"src/**/*.{svelte,js}\" --fix",
     "lint:prettier": "prettier --write  \"src/**/*.{js,json,css,less,svelte,html,md}\"",
     "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
     "lint:pretty": "pretty-quick --staged",
-    "clean:cache": "rimraf node_modules/.cache/ && rimraf node_modules/.vite",
+    "clean:cache": "rimraf node_modules/.cache/",
     "clean:lib": "rimraf node_modules",
     "reload": "rimraf yarn.lock && rimraf package.lock.json && yarn clean:lib && yarn",
     "prepare": "husky install"
@@ -36,15 +36,27 @@
     "url": "https://github.com/spider-nest/activity-page/issues"
   },
   "license": "MIT",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "polka": "^0.5.2",
+    "sirv": "^1.0.17"
+  },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.22",
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/runtime": "^7.15.4",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^20.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.4",
+    "@rollup/plugin-replace": "^3.0.0",
+    "@rollup/plugin-url": "^6.1.0",
     "autoprefixer": "^10.3.4",
-    "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-svelte3": "^3.2.0",
-    "fs-extra": "^10.0.0",
     "husky": "^7.0.2",
     "less": "^4.1.1",
     "lint-staged": "^11.1.2",
@@ -55,10 +67,13 @@
     "prettier-plugin-svelte": "^2.4.0",
     "pretty-quick": "^3.1.1",
     "rimraf": "^3.0.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-svelte": "^7.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "sapper": "^0.29.2",
+    "serve": "^12.0.1",
     "svelte": "^3.42.4",
-    "svelte-preprocess": "^4.9.2",
-    "vite": "^2.5.3",
-    "vite-plugin-mpa": "^1.0.3"
+    "svelte-preprocess": "^4.9.2"
   },
   "engines": {
     "node": "^12.20 || ^14.13.1 || >=16"

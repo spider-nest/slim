@@ -9,49 +9,6 @@
 
 ## Usage
 
-1. Install dependencies
-
 ```bash
 $ yarn
 ```
-
-2. Create a page
-
-```bash
-$ yarn create:page pageA
-```
-
-3. Replace the `main.js` path in `index.html`
-
-```html
-<script type="module" src="/src/pages/pageA/main.js"></script>
-```
-
-## Structure
-
-```
-|-- public         # Static resources that do not need to be compiled
-|-- scripts        # NodeJS script
-|-- src                # Code files that need to be compiled
-    |-- pages          # Multi-page
-        |-- home           # Home page: /home/index.html
-        |-- pageA          # Page A：/pageA/index.html
-        |-- pageB          # Page B：/pageB/index.html
-    |-- styles         # Global Style
-    |-- ...
-|-- template       # Page Template
-|-- ...
-```
-
-## Other scripts
-
-- Delete page: `yarn delete:page pageA`
-- Normal compilation: `yarn build`
-- Normal no cache compilation: `yarn build:noCache`
-- ...
-
-## Tips
-
-1. Don't delete `home` page
-
-`home` page is the default page, multi-page link aggregation
