@@ -21,7 +21,7 @@
     "preview": "svelte-kit preview -p 9528",
     "lint:eslint": "eslint --cache --max-warnings 0  \"src/**/*.{js,svelte}\" --fix",
     "lint:prettier": "prettier --write  \"src/**/*.{js,svelte}\"",
-    "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
+    "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.cjs",
     "lint:pretty": "pretty-quick --staged",
     "clean:cache": "rimraf node_modules/.cache/",
     "clean:lib": "rimraf node_modules",
@@ -34,6 +34,7 @@
     "url": "https://github.com/spider-nest/activity-page/issues"
   },
   "license": "MIT",
+  "type": "module",
   "dependencies": {
     "cookie": "^0.4.1",
     "lodash-es": "^4.17.21"
