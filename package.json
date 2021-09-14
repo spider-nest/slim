@@ -23,6 +23,7 @@
     "lint:prettier": "prettier --write  \"src/**/*.{js,svelte}\"",
     "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.cjs",
     "lint:pretty": "pretty-quick --staged",
+    "lint:stylelint": "stylelint --cache --fix \"**/*.{less,css}\" --cache --cache-location node_modules/.cache/stylelint/",
     "clean:cache": "rimraf node_modules/.cache/",
     "clean:lib": "rimraf node_modules",
     "reload": "rimraf yarn.lock && rimraf package.lock.json && yarn clean:lib && yarn",
@@ -55,6 +56,10 @@
     "prettier-plugin-svelte": "^2.4.0",
     "pretty-quick": "^3.1.1",
     "rimraf": "^3.0.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-standard": "^22.0.0",
+    "stylelint-order": "^4.1.0",
     "svelte": "^3.42.4",
     "svelte-preprocess": "^4.9.2"
   },

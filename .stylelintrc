@@ -1,0 +1,35 @@
+{
+  "root": true,
+  "plugins": [
+    "stylelint-order"
+  ],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier"
+  ],
+  "rules": {
+    "order/order": [
+      [
+        "dollar-variables",
+        "custom-properties",
+        "at-rules",
+        "declarations",
+        {
+          "type": "at-rule",
+          "name": "supports"
+        },
+        {
+          "type": "at-rule",
+          "name": "media"
+        },
+        "rules"
+      ],
+      {
+        "severity": "warning"
+      }
+    ]
+  },
+  "ignoreFiles": [
+    "**/*.js"
+  ]
+}
