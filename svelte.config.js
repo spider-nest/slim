@@ -1,22 +1,37 @@
 import path from "path";
+import adapter from "@sveltejs/adapter-static";
 import sveltePreprocess from "svelte-preprocess";
 import autoprefixer from "autoprefixer";
 import postcssPxToRem from "postcss-pxtorem";
 
+const ifDev = process.env.NODE_ENV === "development";
+
+const basePath = ifDev ? "" : "/test";
+const assetsPath = ifDev ? "" : "https://res.ijunhai.com";
+const appDir = ifDev ? "_app" : "wechat";
+
 const config = {
   kit: {
-    paths: {
-      assets:
-        process.env.NODE_ENV === "development"
-          ? ""
-          : "https://res.ijunhai.com/wechat",
-    },
     target: "#app",
+    paths: {
+      base: basePath,
+      assets: assetsPath,
+    },
+    appDir,
+    adapter: adapter({
+      pages: ".svelte-kit/static",
+      assets: ".svelte-kit/static/assets",
+      fallback: null,
+    }),
     vite: {
+      define: {
+        __BASE_URL__: JSON.stringify(`${basePath}/`),
+      },
       resolve: {
         alias: {
           $assets: path.resolve("./src/assets"),
           $components: path.resolve("./src/components"),
+          $configs: path.resolve("./src/configs"),
           $directives: path.resolve("./src/directives"),
           $styles: path.resolve("./src/styles"),
           $utils: path.resolve("./src/utils"),

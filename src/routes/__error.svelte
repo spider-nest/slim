@@ -25,7 +25,6 @@
     content="svelte,template,kit,svelte-template,svelte-kit,activity-page"
   />
   <meta name="author" content="cnguu" />
-  <title>Activity Page</title>
   <title>{title}</title>
 </svelte:head>
 

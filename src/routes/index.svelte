@@ -1,9 +1,6 @@
-<script context="module">
-  export const prerender = true;
-</script>
-
 <script>
   import Logo from "$assets/logo.png";
+
   import Counter from "$components/counter/Counter.svelte";
 
   import "$styles/routes/index.less";
