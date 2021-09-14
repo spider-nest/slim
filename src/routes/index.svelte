@@ -3,17 +3,22 @@
 
   import Counter from "$components/counter/Counter.svelte";
 
+  import { appName } from "$configs/app";
+
   import "$styles/routes/index.less";
 </script>
 
 <svelte:head>
-  <meta name="description" content="Activity page template for svelte" />
+  <meta
+    name="description"
+    content="Static web page generation template for svelte"
+  />
   <meta
     name="keywords"
-    content="svelte,template,kit,svelte-template,svelte-kit,activity-page"
+    content="svelte,template,kit,svelte-template,svelte-kit,static-page"
   />
   <meta name="author" content="cnguu" />
-  <title>Activity Page</title>
+  <title>{appName}</title>
 </svelte:head>
 
 <section>

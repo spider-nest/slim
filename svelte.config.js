@@ -6,7 +6,9 @@ import postcssPxToRem from "postcss-pxtorem";
 
 const ifDev = process.env.NODE_ENV === "development";
 
+// Deploy your site under a sub path
 const basePath = ifDev ? "" : "/test";
+// Deploy assets under a CDN or other
 const assetsPath = ifDev ? "" : "https://res.ijunhai.com";
 const appDir = ifDev ? "_app" : "wechat";
 

@@ -1,11 +1,18 @@
+<script>
+  import { appName } from "$configs/app";
+</script>
+
 <svelte:head>
-  <meta name="description" content="Activity page template for svelte" />
+  <meta
+    name="description"
+    content="Static web page generation template for svelte"
+  />
   <meta
     name="keywords"
-    content="svelte,template,kit,svelte-template,svelte-kit,activity-page"
+    content="svelte,template,kit,svelte-template,svelte-kit,static-page"
   />
   <meta name="author" content="cnguu" />
-  <title>About</title>
+  <title>{appName} - About</title>
 </svelte:head>
 
 <div class="content">
@@ -17,7 +24,7 @@
     the prompts:
   </p>
 
-  <pre>npm init svelte@next</pre>
+  <pre>yarn && yarn dev</pre>
 
   <p>
     The page you're looking at is purely static HTML, with no client-side

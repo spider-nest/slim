@@ -1,14 +1,14 @@
 {
-  "name": "activity-page",
-  "version": "0.0.3",
-  "description": "Activity page template for svelte",
+  "name": "static-page-template",
+  "version": "1.0.0",
+  "description": "Static web page generation template for svelte",
   "keywords": [
     "svelte",
     "template",
     "kit",
     "svelte-template",
     "svelte-kit",
-    "activity-page"
+    "static-page"
   ],
   "author": {
     "name": "cnguu",
@@ -29,10 +29,10 @@
     "reload": "rimraf yarn.lock && rimraf package.lock.json && yarn clean:lib && yarn",
     "prepare": "husky install"
   },
-  "repository": "https://github.com/spider-nest/activity-page.git",
-  "homepage": "https://github.com/spider-nest/activity-page",
+  "repository": "https://github.com/spider-nest/static-page-template.git",
+  "homepage": "https://github.com/spider-nest/static-page-template",
   "bugs": {
-    "url": "https://github.com/spider-nest/activity-page/issues"
+    "url": "https://github.com/spider-nest/static-page-template/issues"
   },
   "license": "MIT",
   "type": "module",

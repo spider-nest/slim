@@ -1,8 +1,8 @@
-<h1 align="center">Activity Page</h1>
+<h1 align="center">Static Page Template</h1>
 
 <div align="center">
 
-[![MIT](https://img.shields.io/github/license/spider-nest/activity-page)](https://cdn.jsdelivr.net/gh/spider-nest/activity-page@main/LICENSE)
-[![Release](https://img.shields.io/github/v/release/spider-nest/activity-page)](https://github.com/spider-nest/activity-page/releases/latest)
+[![MIT](https://img.shields.io/github/license/spider-nest/static-page-template)](https://cdn.jsdelivr.net/gh/spider-nest/static-page-template@main/LICENSE)
+[![Release](https://img.shields.io/github/v/release/spider-nest/static-page-template)](https://github.com/spider-nest/static-page-template/releases/latest)
 
 </div>

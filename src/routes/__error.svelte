@@ -13,19 +13,24 @@
 <script>
   import { dev } from "$app/env";
 
+  import { appName } from "$configs/app";
+
   export let status;
   export let error;
   export let title;
 </script>
 
 <svelte:head>
-  <meta name="description" content="Activity page template for svelte" />
+  <meta
+    name="description"
+    content="Static web page generation template for svelte"
+  />
   <meta
     name="keywords"
-    content="svelte,template,kit,svelte-template,svelte-kit,activity-page"
+    content="svelte,template,kit,svelte-template,svelte-kit,static-page"
   />
   <meta name="author" content="cnguu" />
-  <title>{title}</title>
+  <title>{appName} - {title}</title>
 </svelte:head>
 
 <h1>{status}</h1>
