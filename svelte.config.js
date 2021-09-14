@@ -5,6 +5,12 @@ import postcssPxToRem from "postcss-pxtorem";
 
 const config = {
   kit: {
+    paths: {
+      assets:
+        process.env.NODE_ENV === "development"
+          ? ""
+          : "https://res.ijunhai.com/wechat",
+    },
     target: "#app",
     vite: {
       resolve: {

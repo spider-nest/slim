@@ -5,6 +5,8 @@
 <script>
   import Logo from "$assets/logo.png";
   import Counter from "$components/counter/Counter.svelte";
+
+  import "$styles/routes/index.less";
 </script>
 
 <svelte:head>
@@ -34,5 +36,3 @@
 
   <Counter />
 </section>
-
-<style src="./index.less"></style>

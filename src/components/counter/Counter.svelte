@@ -88,7 +88,6 @@
 
   .counter-viewport strong {
     position: absolute;
-    display: block;
     width: 100%;
     height: 100%;
     font-weight: 400;
