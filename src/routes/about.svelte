@@ -46,11 +46,3 @@
     form handling. Try using it with JavaScript disabled!
   </p>
 </div>
-
-<style>
-  .content {
-    width: 100%;
-    max-width: 420px;
-    margin: 40px auto 0 auto;
-  }
-</style>

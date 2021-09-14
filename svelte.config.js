@@ -16,13 +16,6 @@ const config = {
           $utils: path.resolve("./src/utils"),
         },
       },
-      css: {
-        preprocessorOptions: {
-          less: {
-            javascriptEnabled: true,
-          },
-        },
-      },
     },
   },
   preprocess: sveltePreprocess({
@@ -41,7 +34,11 @@ const config = {
             "bottom",
             "left",
             "width",
+            "min-width",
+            "max-width",
             "height",
+            "min-height",
+            "max-height",
             "line-height",
             "background-size",
           ],
