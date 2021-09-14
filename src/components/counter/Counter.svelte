@@ -6,6 +6,7 @@
   const displayed_count = spring();
   $: displayed_count.set(count);
   $: offset = modulo($displayed_count, 1);
+  $: transform = `transform: translate(0, ${100 * offset}%)`;
 
   function modulo(n, m) {
     // handle negative numbers
@@ -24,10 +25,7 @@
   </button>
 
   <div class="counter-viewport">
-    <div
-      class="counter-digits"
-      style="transform: translate(0, {100 * offset}%)"
-    >
+    <div class="counter-digits" style="{transform}">
       <strong style="top: -100%" aria-hidden="true"
         >{Math.floor($displayed_count + 1)}</strong
       >
