@@ -1,6 +1,8 @@
 @import "$styles/variables.less";
 @import "$styles/block.less";
 
+@bg-mask: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAAAdAgMAAACMDPsiAAAADFBMVEUAAAAAAAAAAAAAAAA16TeWAAAABHRSTlMBZkgqpG66tgAAAIFJREFUOMtjYGDgmxpKNMhmAAMSdISGJoB0cJKiIzQcpEWVJC2hDUAtpOkAuYyJRC0xpHoF7BlWErWEkez70NADDKKkamlguEqqFgfS4h4ECsjRQqoOYFzSRwt9vE9GvJAR+2SkMVJTcihZ+YWMXElG3ienhCGjHCMt/gvAWkgtkwGuR9YEmCq1JgAAAABJRU5ErkJggg==";
+
 .container {
   .full-content();
 
@@ -12,7 +14,25 @@
   background-size: cover;
 
   .header {
-    //
+    position: relative;
+
+    &__user {
+      position: absolute;
+      top: 14.4px;
+      left: 25.6px;
+      width: 158.4px;
+      height: 23.2px;
+      font-size: 14.4px;
+      line-height: 22.88px;
+      color: @primary-color;
+      text-align: center;
+      background: url("@{bg-mask}") no-repeat;
+      background-size: 158.4px 23.2px;
+    }
+
+    &__staff {
+      //todo
+    }
   }
 
   .main {
