@@ -1,3 +1,4 @@
+@import "$styles/variables.less";
 @import "$styles/block.less";
 
 .container {
@@ -6,6 +7,36 @@
   position: relative;
   max-width: 677px;
   margin: 0 auto;
+  overflow: auto;
   background: url("$assets/bg.jpg") no-repeat center center;
   background-size: cover;
+
+  .header {
+    //
+  }
+
+  .main {
+    //
+  }
+
+  .footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 36px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+
+    &__rule {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    &__copyright {
+      height: 18px;
+      color: @primary-color;
+    }
+  }
 }
