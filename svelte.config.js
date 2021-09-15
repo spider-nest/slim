@@ -1,5 +1,4 @@
 import path from "path";
-import adapter from "@sveltejs/adapter-static";
 import sveltePreprocess from "svelte-preprocess";
 import autoprefixer from "autoprefixer";
 import postcssPxToRem from "postcss-pxtorem";
@@ -12,6 +11,25 @@ const basePath = ifDev ? "" : "/test";
 const assetsPath = ifDev ? "" : "https://res.ijunhai.com";
 const appDir = ifDev ? "_app" : "wechat";
 
+const adapter = ({ pages = "build", assets = pages, fallback }) => {
+  return {
+    name: "cnguu/svelte-adapter",
+    async adapt({ utils }) {
+      utils.rimraf(assets);
+      utils.rimraf(pages);
+
+      utils.copy_static_files(assets);
+      utils.copy_client_files(assets);
+
+      await utils.prerender({
+        fallback,
+        all: !fallback,
+        dest: pages,
+      });
+    },
+  };
+};
+
 const config = {
   kit: {
     target: "#app",
@@ -21,8 +39,8 @@ const config = {
     },
     appDir,
     adapter: adapter({
-      pages: ".svelte-kit/static",
-      assets: ".svelte-kit/static/assets",
+      pages: "dist",
+      assets: "dist",
       fallback: null,
     }),
     vite: {
@@ -48,20 +66,8 @@ const config = {
         postcssPxToRem({
           rootValue: 16, // Design draft 320/20
           unitPrecision: 5,
-          propList: [
-            "font",
-            "font-size",
-            "letter-spacing",
-            "top",
-            "right",
-            "bottom",
-            "left",
-            "width",
-            "height",
-            "line-height",
-            "background-size",
-          ],
-          selectorBlackList: [],
+          propList: ["*"],
+          selectorBlackList: [".non-rem"],
           replace: true,
           mediaQuery: false,
           minPixelValue: 0,

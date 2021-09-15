@@ -17,8 +17,8 @@
     "url": "https://github.com/cnguu"
   },
   "scripts": {
-    "dev": "svelte-kit dev -p 9527",
-    "build": "svelte-kit build",
+    "dev": "rimraf .svelte-kit && svelte-kit dev -p 9527",
+    "build": "rimraf dist && svelte-kit build",
     "preview": "svelte-kit preview -p 9528",
     "lint:eslint": "eslint --cache --max-warnings 0  \"src/**/*.{js,svelte}\" --fix",
     "lint:prettier": "prettier --write  \"src/**/*.{js,svelte}\"",
@@ -26,7 +26,7 @@
     "lint:pretty": "pretty-quick --staged",
     "lint:stylelint": "stylelint --cache --fix \"**/*.{less,css}\" --cache --cache-location node_modules/.cache/stylelint/",
     "clean:cache": "rimraf node_modules/.cache/",
-    "clean:lib": "rimraf node_modules",
+    "clean:lib": "rimraf node_modules && rimraf .svelte-kit",
     "reload": "rimraf yarn.lock && rimraf package.lock.json && yarn clean:lib && yarn",
     "prepare": "husky install"
   },
@@ -42,8 +42,7 @@
     "lodash-es": "^4.17.21"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "next",
-    "@sveltejs/kit": "next",
+    "@sveltejs/kit": "^1.0.0-next.167",
     "autoprefixer": "^10.3.4",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
@@ -62,8 +61,8 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
-    "svelte": "^3.42.4",
-    "svelte-preprocess": "^4.9.2"
+    "svelte": "^3.42.5",
+    "svelte-preprocess": "^4.9.4"
   },
   "engines": {
     "node": "^12.20 || ^14.13.1 || >=16"
