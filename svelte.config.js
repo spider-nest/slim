@@ -64,7 +64,7 @@ const config = {
       plugins: [
         autoprefixer(),
         postcssPxToRem({
-          rootValue: 16, // Design draft 320/20
+          rootValue: 16, // Design draft 320/20, html font-size
           unitPrecision: 5,
           propList: ["*"],
           selectorBlackList: [".non-rem"],
