@@ -1,26 +1,11 @@
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-}
+@import "$styles/block.less";
 
-h1 {
-  width: 100%;
-}
+.container {
+  .full-content();
 
-.welcome {
   position: relative;
-  width: 100%;
-  height: 0;
-  padding: 0 0 calc(100% * 495 / 2048) 0;
-
-  img {
-    position: absolute;
-    top: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-  }
+  max-width: 677px;
+  margin: 0 auto;
+  background: url("$assets/bg.jpg") no-repeat center center;
+  background-size: cover;
 }
