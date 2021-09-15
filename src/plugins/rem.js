@@ -1,9 +1,11 @@
-import { designDraftWidth } from "$configs/app";
+import { designDraftWidth, remRootValue } from "$configs/app";
 
 const setRem = () => {
-  const scale = document.documentElement.clientWidth / designDraftWidth;
+  let ww = document.documentElement.clientWidth;
+  ww = ww > 677 ? (designDraftWidth / 2) * 3 : ww;
+  ww = ww <= 320 ? 320 : ww;
   document.documentElement.style.fontSize =
-    (designDraftWidth / 20) * Math.min(scale, 2) + "px";
+    ww / (designDraftWidth / remRootValue) + "px";
 };
 
 const handleRem = () => {

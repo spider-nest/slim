@@ -12,6 +12,7 @@ const assetsPath = ifDev ? "" : "https://res.ijunhai.com";
 const appDir = ifDev ? "_app" : "wechat";
 // Design draft
 const designDraftWidth = 375;
+const remRootValue = 16;
 
 const adapter = ({ pages = "build", assets = pages, fallback }) => {
   return {
@@ -49,6 +50,7 @@ const config = {
       define: {
         __BASE_URL__: JSON.stringify(`${basePath}/`),
         __DESIGN_DRAFT_WIDTH__: designDraftWidth,
+        __REM_ROOT_VALUE__: remRootValue,
       },
       resolve: {
         alias: {
@@ -68,7 +70,7 @@ const config = {
       plugins: [
         autoprefixer(),
         postcssPxToRem({
-          rootValue: designDraftWidth / 20, // Design draft 320/20, html font-size
+          rootValue: remRootValue,
           unitPrecision: 5,
           propList: ["*"],
           selectorBlackList: [],

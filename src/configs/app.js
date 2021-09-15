@@ -11,3 +11,6 @@ export const appAuthor = "蚁族崛起";
 
 // eslint-disable-next-line no-undef
 export const designDraftWidth = __DESIGN_DRAFT_WIDTH__;
+
+// eslint-disable-next-line no-undef
+export const remRootValue = __REM_ROOT_VALUE__;

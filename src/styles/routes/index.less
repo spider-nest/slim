@@ -7,7 +7,7 @@
   .full-content();
 
   position: relative;
-  max-width: 677px;
+  max-width: 68vh;
   margin: 0 auto;
   overflow: auto;
   background: url("$assets/bg.jpg") no-repeat center center;
@@ -18,25 +18,61 @@
 
     &__user {
       position: absolute;
-      top: 14.4px;
-      left: 25.6px;
-      width: 158.4px;
-      height: 23.2px;
-      font-size: 14.4px;
-      line-height: 22.88px;
+      top: 9px;
+      left: 13px;
+      width: 99px;
+      height: 14.5px;
+      font-size: 9px;
+      line-height: 14.3px;
       color: @primary-color;
       text-align: center;
       background: url("@{bg-mask}") no-repeat;
-      background-size: 158.4px 23.2px;
+      background-size: 99px 14.5px;
+
+      & > a {
+        color: @primary-color;
+        text-decoration: underline;
+      }
     }
 
     &__staff {
-      //todo
+      position: absolute;
+      top: 9px;
+      right: 13px;
+      width: auto;
+      height: 14.5px;
+      padding: 0 10px;
+      font-size: 9px;
+      line-height: 14.3px;
+      text-align: center;
+      background: url("@{bg-mask}") no-repeat;
+      background-size: 99px 14.5px;
+
+      & > a {
+        color: @primary-color;
+        text-decoration: underline;
+      }
     }
   }
 
   .main {
-    //
+    text-align: center;
+
+    &__logo {
+      width: 77px;
+      height: 36px;
+      margin-top: 20px;
+    }
+
+    &__title {
+      width: 283px;
+      height: 86px;
+      margin-top: 2px;
+    }
+
+    &__hero {
+      //
+    }
   }
 
   .footer {
