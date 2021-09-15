@@ -6,8 +6,6 @@
     appAuthor,
   } from "$configs/app";
 
-  import "$styles/routes/index.less";
-
   let href = "javascript:;";
 </script>
 
@@ -31,3 +29,7 @@
     <div class="footer__copyright">本活动最终解释权归蚁族崛起所有</div>
   </footer>
 </div>
+
+<style lang="less" global>
+  @import "../styles/routes/index.less";
+</style>

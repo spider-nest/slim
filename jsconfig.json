@@ -6,6 +6,7 @@
       "$components/*": ["src/components/*"],
       "$configs/*": ["src/configs/*"],
       "$directives/*": ["src/directives/*"],
+      "$plugins/*": ["src/plugins/*"],
       "$styles/*": ["src/styles/*"],
       "$utils/*": ["src/utils/*"]
     }

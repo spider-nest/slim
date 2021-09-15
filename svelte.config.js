@@ -10,6 +10,8 @@ const basePath = ifDev ? "" : "/test";
 // Deploy assets under a CDN or other
 const assetsPath = ifDev ? "" : "https://res.ijunhai.com";
 const appDir = ifDev ? "_app" : "wechat";
+// Design draft
+const designDraftWidth = 375;
 
 const adapter = ({ pages = "build", assets = pages, fallback }) => {
   return {
@@ -46,6 +48,7 @@ const config = {
     vite: {
       define: {
         __BASE_URL__: JSON.stringify(`${basePath}/`),
+        __DESIGN_DRAFT_WIDTH__: designDraftWidth,
       },
       resolve: {
         alias: {
@@ -53,6 +56,7 @@ const config = {
           $components: path.resolve("./src/components"),
           $configs: path.resolve("./src/configs"),
           $directives: path.resolve("./src/directives"),
+          $plugins: path.resolve("./src/plugins"),
           $styles: path.resolve("./src/styles"),
           $utils: path.resolve("./src/utils"),
         },
@@ -64,10 +68,10 @@ const config = {
       plugins: [
         autoprefixer(),
         postcssPxToRem({
-          rootValue: 16, // Design draft 320/20, html font-size
+          rootValue: designDraftWidth / 20, // Design draft 320/20, html font-size
           unitPrecision: 5,
           propList: ["*"],
-          selectorBlackList: [".non-rem"],
+          selectorBlackList: [],
           replace: true,
           mediaQuery: false,
           minPixelValue: 0,
