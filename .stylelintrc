@@ -4,7 +4,6 @@
   "extends": ["stylelint-config-standard", "stylelint-config-prettier"],
   "rules": {
     "no-descending-specificity": null,
-    "unit-case": null,
     "order/order": [
       [
         "dollar-variables",
