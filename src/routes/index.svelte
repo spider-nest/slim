@@ -9,13 +9,10 @@
 </script>
 
 <svelte:head>
-  <meta
-    name="description"
-    content="Static web page generation template for svelte"
-  />
+  <meta name="description" content="Static web page generation template" />
   <meta
     name="keywords"
-    content="svelte,template,kit,svelte-template,svelte-kit,static-page"
+    content="slim,svelte,template,kit,svelte-template,svelte-kit,static-page"
   />
   <meta name="author" content="cnguu" />
   <title>{appName}</title>

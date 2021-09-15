@@ -1,8 +1,9 @@
 {
-  "name": "static-page-template",
-  "version": "1.0.0",
-  "description": "Static web page generation template for svelte",
+  "name": "slim",
+  "version": "1.0.1",
+  "description": "Static web page generation template",
   "keywords": [
+    "slim",
     "svelte",
     "template",
     "kit",
@@ -29,10 +30,10 @@
     "reload": "rimraf yarn.lock && rimraf package.lock.json && yarn clean:lib && yarn",
     "prepare": "husky install"
   },
-  "repository": "https://github.com/spider-nest/static-page-template.git",
-  "homepage": "https://github.com/spider-nest/static-page-template",
+  "repository": "https://github.com/spider-nest/slim.git",
+  "homepage": "https://github.com/spider-nest/slim",
   "bugs": {
-    "url": "https://github.com/spider-nest/static-page-template/issues"
+    "url": "https://github.com/spider-nest/slim/issues"
   },
   "license": "MIT",
   "type": "module",
