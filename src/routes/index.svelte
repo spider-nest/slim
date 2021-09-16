@@ -35,7 +35,7 @@
     <div>
       <img class="main__title" src="{logoIconPng}" alt="首发预约抽奖活动" />
     </div>
-    <div class="main__hero"></div>
+    <div class="main__hero">//todo</div>
   </main>
   <footer class="footer">
     <a class="footer__rule" href="{href}">活动规则</a>
