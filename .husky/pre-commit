@@ -6,4 +6,4 @@
 
 yarn lint:lint-staged
 
-yarn lint:pretty
+#yarn lint:pretty
