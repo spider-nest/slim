@@ -1,5 +1,6 @@
 <script>
-  import { createEventDispatcher, onMount } from "svelte";
+  import { createEventDispatcher } from "svelte";
+  import { fly } from "svelte/transition";
 
   import classes from "$utils/classes.js";
 
@@ -7,6 +8,7 @@
   export { _class as class };
 
   export let visible = false;
+  export let maskClosable = true;
 
   $: dispatch("change", { value: visible });
 
@@ -14,27 +16,27 @@
     visible = false;
   }
 
+  function onMaskClose() {
+    if (maskClosable) {
+      onClose();
+    }
+  }
+
   const dispatch = createEventDispatcher();
 
   const prefixCls = "slim-modal";
   let className = classes(prefixCls, _class);
-
-  onMount(() => {
-    setTimeout(() => {
-      visible = true;
-    }, 1300);
-  });
 </script>
 
-<div
-  class="{className}"
-  style="display: {visible ? 'block' : 'none'}"
-  on:click|self="{onClose}"
->
-  <div class:visible class="{`${prefixCls}__wrap`}">
-    <div class="{`${prefixCls}__content`}">1</div>
+{#if visible}
+  <div class="{className}" on:click|self="{onMaskClose}">
+    <div class="{`${prefixCls}__wrap`}">
+      <div class="{`${prefixCls}__content`}" transition:fly="{{ y: -100 }}">
+        1
+      </div>
+    </div>
   </div>
-</div>
+{/if}
 
 <style lang="less">
   @import "./modal.less";

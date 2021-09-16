@@ -14,6 +14,10 @@
   import { SlimModal } from "$components";
 
   let href = "javascript:;";
+
+  let modalVisible = {
+    staff: false,
+  };
 </script>
 
 <svelte:head>
@@ -29,7 +33,14 @@
       统帅大人，请<a href="{href}">登录</a>
     </div>
     <div class="header__staff">
-      <a href="{href}">联系客服</a>
+      <a
+        href="{href}"
+        on:click|stopPropagation|preventDefault="{() => {
+          modalVisible.staff = true;
+        }}"
+      >
+        联系客服
+      </a>
     </div>
   </header>
   <main class="main">
@@ -85,7 +96,7 @@
   </footer>
 </div>
 
-<SlimModal />
+<SlimModal bind:visible="{modalVisible.staff}" maskClosable="{false}" />
 
 <style lang="less" global>
   @import "../styles/routes/index.less";
