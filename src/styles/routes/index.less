@@ -1,9 +1,13 @@
 @import "../variables.less";
 @import "../block.less";
+@import "../animation/index.less";
 
 @assets-bg: url("$assets/bg.jpg");
 @assets-user-login: url("$assets/user_login.png");
 @assets-home-img-border: url("$assets/home-img-border.png");
+@assets-container-box: url("$assets/container-box.png");
+@assets-bubble1: url("$assets/bubble1.png");
+@assets-bubble2: url("$assets/bubble2.png");
 
 .container {
   .full-content();
@@ -128,7 +132,109 @@
     }
 
     &__twister {
+      position: relative;
+      width: 340px;
+      height: 55vh;
       margin: 0 auto;
+      background: @assets-container-box no-repeat center center;
+      background-size: 90% 90%;
+      background-position-y: 10px;
+
+      .twister {
+        &__left {
+          position: absolute;
+          top: 23%;
+          left: 30px;
+
+          .left-container {
+            position: absolute;
+            left: -26px;
+            width: 67.5px;
+            height: 102px;
+            background: @assets-bubble2 no-repeat center center;
+            background-size: cover;
+            animation: fadeInOut 3s infinite ease-in-out alternate;
+
+            & > div {
+              width: 70px;
+              padding: 3.5px 7.5px 0 6.5px;
+              font-size: 10px;
+              color: @primary-color;
+
+              & > span {
+                color: #f9dc47;
+              }
+            }
+          }
+        }
+
+        &__right {
+          position: absolute;
+          top: 10%;
+          right: 11px;
+
+          .right-container {
+            width: 67.5px;
+            height: 102px;
+            background: @assets-bubble1 no-repeat center center;
+            background-size: cover;
+            animation: fadeInOut 3s infinite ease-in-out alternate;
+
+            & > div {
+              width: 70px;
+              padding: 5px 12.5px 0 12px;
+              font-size: 10px;
+              color: @primary-color;
+
+              & > span {
+                color: #f9dc47;
+              }
+            }
+          }
+        }
+
+        &__action {
+          &-go {
+            position: absolute;
+            top: 48.7%;
+            right: 0;
+            left: 0;
+            width: 70px;
+            height: 55px;
+            margin: 0 auto;
+            cursor: pointer;
+          }
+
+          &-more {
+            position: absolute;
+            top: 77.7%;
+            right: 0;
+            left: 0;
+            width: 131px;
+            height: 46px;
+            margin: 0 auto;
+            cursor: pointer;
+          }
+        }
+
+        &__tip {
+          position: absolute;
+          top: 70.9%;
+          right: 0;
+          left: 0;
+          display: none;
+          height: 10px;
+          margin: 0 auto;
+          font-size: 12px;
+          line-height: 1.6px;
+          letter-spacing: 2px;
+          color: #fff2ad;
+
+          .tip-total {
+            color: #ffe432;
+          }
+        }
+      }
     }
   }
 

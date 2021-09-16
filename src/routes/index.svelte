@@ -52,7 +52,29 @@
       </div>
     </div>
     <div class="main__twister">
-      //todo
+      <aside class="twister__left">
+        <div class="left-container">
+          <div>
+            邀请好友成功参与扭蛋活动可
+            <span>额外获得</span>
+            "扭一扭"次数
+          </div>
+        </div>
+      </aside>
+      <aside class="twister__right">
+        <div class="right-container">
+          <div>
+            每日登录活动可
+            <span>获得1次</span>
+            "扭一扭"次数
+          </div>
+        </div>
+      </aside>
+      <div class="twister__action-go"></div>
+      <div class="twister__action-more"></div>
+      <div class="twister__tip">
+        扭蛋次数还剩<span class="tip-total">0</span>次
+      </div>
     </div>
   </main>
   <footer class="footer">
