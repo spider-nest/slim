@@ -11,8 +11,9 @@
   import heroIconPng from "$assets/hero-icon.png";
   import probabilityFormulaPng from "$assets/probability-formula.png";
   import connectCustomerTitleTipPng from "$assets/connect_customer/title-tip.png";
+  import connectCustomerQRCodePng from "$assets/connect_customer/QRCode.png";
 
-  import { SlimModal } from "$components";
+  import { SlimModal } from "$components/index.js";
 
   let href = "javascript:;";
 
@@ -97,10 +98,19 @@
   </footer>
 </div>
 
-<SlimModal bind:visible="{modalVisible.staff}" maskClosable="{false}">
+<SlimModal
+  bind:visible="{modalVisible.staff}"
+  maskClosable="{false}"
+  width="18.9375rem"
+  height="19.25rem"
+>
   <svelte:fragment slot="title">
     <img src="{connectCustomerTitleTipPng}" alt="title" />
   </svelte:fragment>
+  <div class="staff-modal__qrcode">
+    <img src="{connectCustomerQRCodePng}" alt="二维码添加" />
+  </div>
+  <div class="staff-modal__copy"></div>
 </SlimModal>
 
 <style lang="less" global>

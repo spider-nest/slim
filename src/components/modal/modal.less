@@ -20,13 +20,12 @@
 
   &__wrap {
     display: inline-block;
+    text-align: left;
     vertical-align: middle;
   }
 
   &__content {
     position: relative;
-    width: 303px;
-    height: 308px;
     background: @bg no-repeat;
     background-size: 100%;
 
@@ -57,7 +56,14 @@
       }
 
       &__body {
-        //
+        position: absolute;
+        top: 42px;
+        right: 14px;
+        left: 14px;
+
+        & > .body__wrap {
+          position: relative;
+        }
       }
     }
   }

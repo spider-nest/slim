@@ -13,6 +13,12 @@
 
   export let maskClosable = true;
 
+  export let width = "320px";
+
+  export let height = "auto";
+
+  export let bodyCls = "";
+
   const dispatch = createEventDispatcher();
   $: dispatch("change", visible);
 
@@ -33,7 +39,11 @@
 {#if visible}
   <div class="{className}" on:click|self="{onMaskClose}">
     <div class="{`${prefixCls}__wrap`}">
-      <div class="{`${prefixCls}__content`}" transition:fly="{{ y: -100 }}">
+      <div
+        class="{`${prefixCls}__content`}"
+        transition:fly="{{ y: -100 }}"
+        style="width: {width};height: {height}"
+      >
         <div class="content__close" on:click="{onClose}">
           <img src="{cancelPng}" alt="close" />
         </div>
@@ -41,7 +51,9 @@
           <slot name="title" />
         </div>
         <div class="content__body">
-          <slot />
+          <div class="body__wrap {bodyCls}">
+            <slot />
+          </div>
         </div>
       </div>
     </div>
