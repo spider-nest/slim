@@ -1,7 +1,9 @@
 @import "../variables.less";
 @import "../block.less";
 
-@bg-mask: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAAAdAgMAAACMDPsiAAAADFBMVEUAAAAAAAAAAAAAAAA16TeWAAAABHRSTlMBZkgqpG66tgAAAIFJREFUOMtjYGDgmxpKNMhmAAMSdISGJoB0cJKiIzQcpEWVJC2hDUAtpOkAuYyJRC0xpHoF7BlWErWEkez70NADDKKkamlguEqqFgfS4h4ECsjRQqoOYFzSRwt9vE9GvJAR+2SkMVJTcihZ+YWMXElG3ienhCGjHCMt/gvAWkgtkwGuR9YEmCq1JgAAAABJRU5ErkJggg==";
+@assets-bg: url("$assets/bg.jpg");
+@assets-user-login: url("$assets/user_login.png");
+@assets-home-img-border: url("$assets/home-img-border.png");
 
 .container {
   .full-content();
@@ -10,7 +12,7 @@
   max-width: 68vh;
   margin: 0 auto;
   overflow: auto;
-  background: url("$assets/bg.jpg") no-repeat center center;
+  background: @assets-bg no-repeat center center;
   background-size: cover;
 
   .header {
@@ -26,7 +28,7 @@
       line-height: 14.3px;
       color: @primary-color;
       text-align: center;
-      background: url("@{bg-mask}") no-repeat;
+      background: @assets-user-login no-repeat;
       background-size: 99px 14.5px;
 
       & > a {
@@ -45,7 +47,7 @@
       font-size: 9px;
       line-height: 14.3px;
       text-align: center;
-      background: url("@{bg-mask}") no-repeat;
+      background: @assets-user-login no-repeat;
       background-size: 99px 14.5px;
 
       & > a {
@@ -71,7 +73,62 @@
     }
 
     &__hero {
-      //
+      display: flex;
+      width: 300px;
+      height: 53px;
+      margin: 0 auto;
+      align-items: center;
+      flex-direction: row;
+      background: @assets-home-img-border no-repeat center center;
+      background-size: cover;
+
+      .hero {
+        &__logo {
+          height: 30px;
+          padding: 0 12px;
+
+          & > img {
+            width: 29px;
+          }
+        }
+
+        &__info {
+          height: 36px;
+          line-height: 16px;
+          text-align: left;
+          flex: 1;
+
+          .info {
+            &__link {
+              & > a {
+                font-size: 11px;
+                font-weight: bold;
+                color: #ffe684;
+                text-decoration: underline;
+              }
+            }
+
+            &__note {
+              font-size: 10px;
+              color: @primary-color;
+            }
+          }
+        }
+
+        &__percent {
+          height: 24px;
+          padding: 0 12px;
+          line-height: 24px;
+
+          & > img {
+            height: 24px;
+          }
+        }
+      }
+    }
+
+    &__twister {
+      margin: 0 auto;
     }
   }
 

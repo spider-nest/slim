@@ -8,6 +8,8 @@
 
   import logoPng from "$assets/logo.png";
   import logoIconPng from "$assets/logo-icon.png";
+  import heroIconPng from "$assets/hero-icon.png";
+  import probabilityFormulaPng from "$assets/probability-formula.png";
 
   let href = "javascript:;";
 </script>
@@ -35,7 +37,23 @@
     <div>
       <img class="main__title" src="{logoIconPng}" alt="首发预约抽奖活动" />
     </div>
-    <div class="main__hero">//todo</div>
+    <div class="main__hero">
+      <div class="hero__logo">
+        <img src="{heroIconPng}" alt="英雄图鉴" />
+      </div>
+      <div class="hero__info">
+        <div class="info__link">
+          <a href="{href}">英雄图鉴</a>
+        </div>
+        <div class="info__note">中奖记录在这里查看~</div>
+      </div>
+      <div class="hero__percent">
+        <img src="{probabilityFormulaPng}" alt="概率公式" />
+      </div>
+    </div>
+    <div class="main__twister">
+      //todo
+    </div>
   </main>
   <footer class="footer">
     <a class="footer__rule" href="{href}">活动规则</a>
