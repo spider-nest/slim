@@ -1,8 +1,11 @@
 @import "$styles/block.less";
 
+@pc-bg: url("$assets/pc-bg.png");
+
 #app {
   .full-content();
 
-  background: url("$assets/pc-bg.png") no-repeat center center;
+  position: relative;
+  background: @pc-bg no-repeat center center;
   background-size: cover;
 }

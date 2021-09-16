@@ -11,6 +11,8 @@
   import heroIconPng from "$assets/hero-icon.png";
   import probabilityFormulaPng from "$assets/probability-formula.png";
 
+  import { SlimModal } from "$components";
+
   let href = "javascript:;";
 </script>
 
@@ -82,6 +84,8 @@
     <div class="footer__copyright">本活动最终解释权归蚁族崛起所有</div>
   </footer>
 </div>
+
+<SlimModal />
 
 <style lang="less" global>
   @import "../styles/routes/index.less";

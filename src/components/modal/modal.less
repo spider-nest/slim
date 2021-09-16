@@ -1,0 +1,38 @@
+@import "../../styles/block.less";
+@import "../../styles/animation/fadeInUp.less";
+
+@prefix-cls: ~"slim-modal";
+@bg: url("$assets/connect_customer/bg.png");
+
+.@{prefix-cls} {
+  .full-container();
+
+  z-index: 1000;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.45);
+
+  &::before {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+    content: "";
+  }
+
+  &__wrap {
+    display: inline-block;
+    vertical-align: middle;
+
+    &.visible {
+      animation: fadeInUp 1s;
+    }
+  }
+
+  &__content {
+    position: relative;
+    width: 303px;
+    height: 308px;
+    background: @bg no-repeat;
+    background-size: 100%;
+  }
+}
