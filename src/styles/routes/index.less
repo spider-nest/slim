@@ -8,6 +8,7 @@
 @assets-container-box: url("$assets/container-box.png");
 @assets-bubble1: url("$assets/bubble1.png");
 @assets-bubble2: url("$assets/bubble2.png");
+@assets-connect-customer-wechat-num-copy: url("$assets/connect_customer/wechat_num_copy.png");
 
 .container {
   .full-content();
@@ -243,9 +244,9 @@
     right: 0;
     bottom: 0;
     left: 0;
-    height: 36PX;
-    font-size: 12PX;
-    line-height: 18PX;
+    height: 36px;
+    font-size: 12px;
+    line-height: 18px;
     text-align: center;
 
     &__rule {
@@ -254,7 +255,7 @@
     }
 
     &__copyright {
-      height: 18PX;
+      height: 18px;
       color: @primary-color;
     }
   }
@@ -272,6 +273,10 @@
   }
 
   &__copy {
-    //
+    width: 91px;
+    height: 31px;
+    margin: 12px auto 0 auto;
+    background: @assets-connect-customer-wechat-num-copy no-repeat;
+    background-size: contain;
   }
 }
