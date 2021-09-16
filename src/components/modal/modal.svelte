@@ -4,13 +4,17 @@
 
   import classes from "$utils/classes.js";
 
+  import cancelPng from "$assets/cancel.png";
+
   let _class = null;
   export { _class as class };
 
   export let visible = false;
+
   export let maskClosable = true;
 
-  $: dispatch("change", { value: visible });
+  const dispatch = createEventDispatcher();
+  $: dispatch("change", visible);
 
   function onClose() {
     visible = false;
@@ -22,8 +26,6 @@
     }
   }
 
-  const dispatch = createEventDispatcher();
-
   const prefixCls = "slim-modal";
   let className = classes(prefixCls, _class);
 </script>
@@ -32,7 +34,15 @@
   <div class="{className}" on:click|self="{onMaskClose}">
     <div class="{`${prefixCls}__wrap`}">
       <div class="{`${prefixCls}__content`}" transition:fly="{{ y: -100 }}">
-        1
+        <div class="content__close" on:click="{onClose}">
+          <img src="{cancelPng}" alt="close" />
+        </div>
+        <div class="content__title">
+          <slot name="title" />
+        </div>
+        <div class="content__body">
+          <slot />
+        </div>
       </div>
     </div>
   </div>

@@ -10,6 +10,7 @@
   import logoIconPng from "$assets/logo-icon.png";
   import heroIconPng from "$assets/hero-icon.png";
   import probabilityFormulaPng from "$assets/probability-formula.png";
+  import connectCustomerTitleTipPng from "$assets/connect_customer/title-tip.png";
 
   import { SlimModal } from "$components";
 
@@ -96,7 +97,11 @@
   </footer>
 </div>
 
-<SlimModal bind:visible="{modalVisible.staff}" maskClosable="{false}" />
+<SlimModal bind:visible="{modalVisible.staff}" maskClosable="{false}">
+  <svelte:fragment slot="title">
+    <img src="{connectCustomerTitleTipPng}" alt="title" />
+  </svelte:fragment>
+</SlimModal>
 
 <style lang="less" global>
   @import "../styles/routes/index.less";
