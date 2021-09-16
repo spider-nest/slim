@@ -5,10 +5,6 @@
 
 **Static web page generation template**
 
-## Branch
-
-- main: Just an example, read only
-
 ## Usage
 
 ### Development
@@ -35,7 +31,3 @@ $ yarn build
 ```
 $ yarn preview
 ```
-
-## Thanks
-
-- [slim](https://github.com/spider-nest/slim)
