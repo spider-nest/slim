@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from "svelte";
+
   import {
     appName,
     appDescription,
@@ -13,13 +15,51 @@
   import connectCustomerTitleTipPng from "$assets/connect_customer/title-tip.png";
   import connectCustomerQRCodePng from "$assets/connect_customer/QRCode.png";
 
-  import { SlimModal } from "$components/index.js";
+  import { SlimModal, SlimMessage } from "$components/index.js";
+
+  import clipboard from "$directives/clipboard";
+
+  import { getActivityInfo } from "$services/drawCard";
 
   let href = "javascript:;";
 
   let modalVisible = {
     staff: false,
   };
+
+  let message = {
+    visible: false,
+    content: "",
+    width: "",
+    height: "",
+    duration: 0,
+  };
+
+  let activityInfo = {
+    rules: "",
+    start_time: 0,
+    end_time: 0,
+    win_rate_list: [],
+  };
+  const requestActivityInfo = async () => {
+    const res = await getActivityInfo();
+    if (!res || res.code !== 0) {
+      message.content = res.msg || "网络繁忙，请稍后再试~";
+      message.width = "11.0625rem";
+      message.height = "4.25rem";
+      message.duration = 0;
+      message.visible = true;
+      return;
+    }
+    activityInfo.rules = res.data.rules;
+    activityInfo.start_time = res.data.start_time * 1000;
+    activityInfo.end_time = res.data.end_time * 1000;
+    activityInfo.win_rate_list = res.data.win_rate_list;
+  };
+
+  onMount(() => {
+    requestActivityInfo();
+  });
 </script>
 
 <svelte:head>
@@ -110,8 +150,26 @@
   <div class="staff-modal__qrcode">
     <img src="{connectCustomerQRCodePng}" alt="二维码添加" />
   </div>
-  <div class="staff-modal__copy"></div>
+  <div
+    class="staff-modal__copy"
+    use:clipboard="{{ text: 'yzjq6666' }}"
+    on:click|self="{() => {
+      message.content = '已复制微信号到剪贴板';
+      message.width = '11.0625rem';
+      message.height = '4.25rem';
+      message.duration = 2300;
+      message.visible = true;
+    }}"
+  ></div>
 </SlimModal>
+
+<SlimMessage
+  bind:visible="{message.visible}"
+  content="{message.content}"
+  width="{message.width}"
+  height="{message.height}"
+  duration="{message.duration}"
+/>
 
 <style lang="less" global>
   @import "../styles/routes/index.less";
