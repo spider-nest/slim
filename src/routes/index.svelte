@@ -13,13 +13,17 @@
   import connectCustomerTitleTipPng from "$assets/connect_customer/title-tip.png";
   import connectCustomerQRCodePng from "$assets/connect_customer/QRCode.png";
 
-  import { SlimModal } from "$components/index.js";
+  import { SlimModal, SlimMessage } from "$components/index.js";
+
+  import clipboard from "$directives/clipboard";
 
   let href = "javascript:;";
 
   let modalVisible = {
     staff: false,
   };
+
+  let messageVisible = false;
 </script>
 
 <svelte:head>
@@ -110,8 +114,21 @@
   <div class="staff-modal__qrcode">
     <img src="{connectCustomerQRCodePng}" alt="二维码添加" />
   </div>
-  <div class="staff-modal__copy"></div>
+  <div
+    class="staff-modal__copy"
+    use:clipboard="{{ text: 'yzjq6666' }}"
+    on:click|self="{() => {
+      messageVisible = true;
+    }}"
+  ></div>
 </SlimModal>
+
+<SlimMessage
+  bind:visible="{messageVisible}"
+  content="已复制微信号到剪贴板"
+  width="11.0625rem"
+  height="4.25rem"
+/>
 
 <style lang="less" global>
   @import "../styles/routes/index.less";

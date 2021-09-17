@@ -4,56 +4,58 @@
 
   import classes from "$utils/classes.js";
 
-  import cancelPng from "$assets/cancel.png";
+  import clickOutside from "$directives/clickOutside.js";
 
   let _class = null;
   export { _class as class };
 
   export let visible = false;
 
-  export let maskClosable = true;
-
-  export let width = "320px";
+  export let width = "auto";
 
   export let height = "auto";
 
-  export let bodyCls = "";
+  export let content = "";
+
+  export let duration = 2300;
 
   const dispatch = createEventDispatcher();
   $: dispatch("change", visible);
 
-  const prefixCls = "slim-modal";
+  const prefixCls = "slim-message";
   let className = classes(prefixCls, _class);
 
   function onClose() {
     visible = false;
   }
 
-  function onMaskClose() {
-    if (maskClosable) {
-      onClose();
+  let closeDurationTimer = null;
+  function createDurationTimer(visible) {
+    if (visible && duration > 0) {
+      closeDurationTimer = setTimeout(() => {
+        onClose();
+        closeDurationTimer = null;
+      }, duration);
     }
+  }
+  $: createDurationTimer(visible);
+
+  function onClickOutside() {
+    dispatch("clickOutside");
   }
 </script>
 
 {#if visible}
-  <div class="{className}" on:click|self="{onMaskClose}">
+  <div class="{className}">
     <div class="{`${prefixCls}__wrap`}">
       <div
         class="{`${prefixCls}__content`}"
-        transition:fly="{{ y: -100 }}"
+        transition:fly="{{ y: -50 }}"
         style="width: {width};height: {height}"
+        use:clickOutside="{onClickOutside}"
       >
-        <div class="content__close" on:click="{onClose}">
-          <img src="{cancelPng}" alt="close" />
-        </div>
-        <div class="content__title">
-          <slot name="title" />
-        </div>
         <div class="content__body">
-          <div class="body__wrap {bodyCls}">
-            <slot />
-          </div>
+          {content}
         </div>
       </div>
     </div>
@@ -61,5 +63,5 @@
 {/if}
 
 <style lang="less">
-  @import "./modal.less";
+  @import "./message.less";
 </style>
