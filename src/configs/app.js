@@ -14,3 +14,6 @@ export const designDraftWidth = __DESIGN_DRAFT_WIDTH__;
 
 // eslint-disable-next-line no-undef
 export const remRootValue = __REM_ROOT_VALUE__;
+
+// eslint-disable-next-line no-undef
+export const proxyTarget = __PROXY_TARGET__;

@@ -7,12 +7,19 @@ const ifDev = process.env.NODE_ENV === "development";
 
 // Deploy your site under a sub path
 const basePath = ifDev ? "" : "/test";
+
 // Deploy assets under a CDN or other
 const assetsPath = ifDev ? "" : "https://res.ijunhai.com";
 const appDir = ifDev ? "_app" : "wechat";
+
 // Design draft
 const designDraftWidth = 375;
 const remRootValue = 16;
+
+// proxy
+const proxyTarget = ifDev
+  ? "http://weixin-huodong.tesn20.com"
+  : "https://activity.lagbug.com";
 
 const adapter = ({ pages = "build", assets = pages, fallback }) => {
   return {
@@ -51,6 +58,7 @@ const config = {
         __BASE_URL__: JSON.stringify(`${basePath}/`),
         __DESIGN_DRAFT_WIDTH__: designDraftWidth,
         __REM_ROOT_VALUE__: remRootValue,
+        __PROXY_TARGET__: JSON.stringify(proxyTarget),
       },
       resolve: {
         alias: {
@@ -59,6 +67,7 @@ const config = {
           $configs: path.resolve("./src/configs"),
           $directives: path.resolve("./src/directives"),
           $plugins: path.resolve("./src/plugins"),
+          $services: path.resolve("./src/services"),
           $styles: path.resolve("./src/styles"),
           $utils: path.resolve("./src/utils"),
         },

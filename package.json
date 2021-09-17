@@ -17,8 +17,8 @@
     "url": "https://github.com/cnguu"
   },
   "scripts": {
-    "dev": "rimraf .svelte-kit && svelte-kit dev -p 9527",
-    "build": "rimraf dist && svelte-kit build",
+    "dev": "svelte-kit dev -p 9527",
+    "build": "svelte-kit build",
     "preview": "svelte-kit preview -p 9528",
     "lint:eslint": "eslint --cache --max-warnings 0  \"src/**/*.{js,svelte}\" --fix",
     "lint:prettier": "prettier --write  \"src/**/*.{js,svelte}\"",
@@ -38,6 +38,7 @@
   "license": "MIT",
   "type": "module",
   "dependencies": {
+    "axios": "^0.21.4",
     "cookie": "^0.4.1",
     "lodash-es": "^4.17.21"
   },
@@ -61,7 +62,7 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
-    "svelte": "^3.42.5",
+    "svelte": "^3.42.6",
     "svelte-preprocess": "^4.9.4"
   },
   "engines": {
