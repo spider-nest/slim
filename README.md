@@ -31,3 +31,13 @@ $ yarn build
 ```
 $ yarn preview
 ```
+
+[Example 1](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/1.png)
+
+[Example 2](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/2.png)
+
+## Compare with jQuery
+
+[Example 3](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/3.png)
+
+[Example 4](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/4.png)
