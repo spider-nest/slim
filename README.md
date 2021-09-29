@@ -32,8 +32,30 @@ $ yarn build
 $ yarn preview
 ```
 
-![Example 1](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/1.png) ![Example 2](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/2.png)
+<div style="width: 100%;">
+  <div style="max-width: 50%;">
+    <a target="_blank" rel="noopener noreferrer" href="https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/1.png">
+      <img src="https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/1.png" alt="Example 1" style="max-width: 100%;">
+    </a>
+  </div>
+  <div style="max-width: 50%;">
+    <a target="_blank" rel="noopener noreferrer" href="https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/2.png">
+      <img src="https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/2.png" alt="Example 2" style="max-width: 100%;">
+    </a>
+  </div>
+</div>
 
 ## Compare with jQuery
 
-![Example 3](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/3.png) ![Example 4](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/4.png)
+<div style="width: 100%;">
+  <div style="max-width: 50%;">
+    <a target="_blank" rel="noopener noreferrer" href="https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/3.png">
+      <img src="https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/3.png" alt="Example 3" style="max-width: 100%;">
+    </a>
+  </div>
+  <div style="max-width: 50%;">
+    <a target="_blank" rel="noopener noreferrer" href="https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/4.png">
+      <img src="https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/4.png" alt="Example 4" style="max-width: 100%;">
+    </a>
+  </div>
+</div>
