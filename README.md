@@ -32,8 +32,8 @@ $ yarn build
 $ yarn preview
 ```
 
-![Example 1](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/1.png)
+![Example 1](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/example1.png)
 
 ## Compare with jQuery
 
-![Example 2](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/2.png)
+![Example 2](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/example2.png)
