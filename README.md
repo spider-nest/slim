@@ -10,26 +10,26 @@
 ### Development
 
 ```
-$ yarn
-$ yarn dev
+$ pnpm i
+$ pnpm dev
 ```
 
 Git hooks, see the `package.json`
 
 ```
-yarn lint:***
+pnpm lint:***
 ```
 
 ### Production
 
 ```
-$ yarn build
+$ pnpm build
 ```
 
 ### Preview
 
 ```
-$ yarn preview
+$ pnpm preview
 ```
 
 ![Example 1](https://cdn.jsdelivr.net/gh/spider-nest/slim@main/static/example1.png)

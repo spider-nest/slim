@@ -27,7 +27,7 @@
     "lint:stylelint": "stylelint --cache --fix \"**/*.{less,css}\" --cache --cache-location node_modules/.cache/stylelint/",
     "clean:cache": "rimraf node_modules/.cache/",
     "clean:lib": "rimraf .svelte-kit && rimraf node_modules",
-    "reload": "rimraf yarn.lock && yarn clean:lib && yarn",
+    "reload": "rimraf pnpm-lock.yaml && pnpm clean:lib && pnpm",
     "prepare": "husky install"
   },
   "repository": "https://github.com/spider-nest/slim.git",

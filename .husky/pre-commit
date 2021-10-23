@@ -4,4 +4,4 @@
 
 [ -n "$CI" ] && exit 0
 
-yarn lint:lint-staged
+pnpm lint:lint-staged
